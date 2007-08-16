@@ -1,9 +1,9 @@
 Summary:	CUPS printer drivers for Casio USB label printers
 Name:		cups-drivers-pegg
 Version:	0.23
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
-Group:		System/Configuration/Printing
+Group:		System/Printing
 URL:		http://www.tu-harburg.de/~soda0231/pegg/pegg.html
 # the http://www.tu-harburg.de/~soda0231/pegg/files/ resource is gone
 Source0:	pegg-0.23.tar.bz2
