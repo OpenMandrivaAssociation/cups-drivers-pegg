@@ -16,6 +16,7 @@ BuildRequires:	libusb-devel
 Conflicts:	cups-drivers = 2007
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 CUPS printer drivers for  Casio USB label printers.
