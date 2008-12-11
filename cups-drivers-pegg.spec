@@ -10,7 +10,7 @@ Source0:	pegg-0.23.tar.bz2
 Source1:	xbm2crw-0.4.tar.bz2
 Source2:	cups2pegg-0.21a.tar.bz2
 Source3:	pegg_el-0.11.tar.bz2
-Requires:	ImageMagick
+Requires:	imagemagick
 Requires:	cups
 BuildRequires:	libusb-devel
 Conflicts:	cups-drivers = 2007
