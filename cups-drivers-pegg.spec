@@ -1,7 +1,7 @@
 Summary:	CUPS printer drivers for Casio USB label printers
 Name:		cups-drivers-pegg
 Version:	0.23
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPL
 Group:		System/Printing
 URL:		http://www.tu-harburg.de/~soda0231/pegg/pegg.html
@@ -10,13 +10,14 @@ Source0:	pegg-0.23.tar.bz2
 Source1:	xbm2crw-0.4.tar.bz2
 Source2:	cups2pegg-0.21a.tar.bz2
 Source3:	pegg_el-0.11.tar.bz2
+Patch0:		cups-drivers-pegg-0.23-LDFLAGS.diff
 Requires:	imagemagick
 Requires:	cups
 BuildRequires:	libusb-devel
 Conflicts:	cups-drivers = 2007
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 CUPS printer drivers for  Casio USB label printers.
@@ -30,15 +31,16 @@ This package contains CUPS drivers (PPD) for the following printers:
 %prep
 
 %setup -q -c -T -n %{name}-%{version} -a0 -a1 -a2 -a3
+%patch0 -p1
 
 # gunzip the man pages
 find -name "*.1.gz" | xargs gunzip
 
 %build
 
-%make -C pegg-* CFLAGS="%{optflags}" LIB_PATH="%{_libdir}"
+%make -C pegg-* CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{ldflags}"
 
-%make -C pegg_el-*/src CFLAGS="%{optflags}" LIB_PATH="%{_libdir}"
+%make -C pegg_el-*/src CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{ldflags}"
 
 # Suppress logging in cups2pegg backend
 perl -p -i -e "s:/var/log/cups/cups2pegg.log:/dev/null:" cups2pegg*/src/cups2pegg
