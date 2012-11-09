@@ -1,0 +1,40 @@
+diff -Naur cups-drivers-pegg-0.23/pegg-0.23/Makefile cups-drivers-pegg-0.23.oden/pegg-0.23/Makefile
+--- cups-drivers-pegg-0.23/pegg-0.23/Makefile	2004-12-02 13:04:18.000000000 +0100
++++ cups-drivers-pegg-0.23.oden/pegg-0.23/Makefile	2008-12-23 21:23:50.000000000 +0100
+@@ -14,6 +14,7 @@
+ 
+ # Compiler flags (default: display all warnings)
+ CFLAGS=-Wall
++LDFLAGS=
+ 
+ # Enter the path to the usb.h include file. If you do not know the path
+ # you might try the folowing command: find /usr -name usb.h
+@@ -28,7 +29,7 @@
+ # ----------------------------------
+ 
+ pegg:	pegg.c
+-	gcc -o pegg pegg.c ${CFLAGS} -I${INCLUDE_PATH} -L${LIB_PATH} -lusb
++	gcc -o pegg pegg.c ${CFLAGS} ${LDFLAGS} -I${INCLUDE_PATH} -L${LIB_PATH} -lusb
+ 
+ all:	pegg
+ 
+diff -Naur cups-drivers-pegg-0.23/pegg_el-0.11/src/Makefile cups-drivers-pegg-0.23.oden/pegg_el-0.11/src/Makefile
+--- cups-drivers-pegg-0.23/pegg_el-0.11/src/Makefile	2004-12-01 11:14:58.000000000 +0100
++++ cups-drivers-pegg-0.23.oden/pegg_el-0.11/src/Makefile	2008-12-23 21:24:21.000000000 +0100
+@@ -14,6 +14,7 @@
+ 
+ # Compiler flags (default: display all warnings)
+ CFLAGS=-Wall
++LDFLAGS=
+ 
+ # Enter the path to the usb.h include file. If you do not know the path
+ # you might try the folowing command: find /usr -name usb.h
+@@ -28,7 +29,7 @@
+ # ----------------------------------
+ 
+ pegg:
+-	gcc -o pegg_el pegg_el.c ${CFLAGS} -I${INCLUDE_PATH} -L${LIB_PATH} -lusb
++	gcc -o pegg_el pegg_el.c ${CFLAGS} ${LDFLAGS} -I${INCLUDE_PATH} -L${LIB_PATH} -lusb
+ 
+ all:	pegg
+ 
