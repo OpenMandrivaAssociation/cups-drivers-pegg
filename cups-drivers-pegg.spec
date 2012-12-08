@@ -1,7 +1,7 @@
 Summary:	CUPS printer drivers for Casio USB label printers
 Name:		cups-drivers-pegg
 Version:	0.23
-Release:	%mkrel 10
+Release:	%mkrel 12
 License:	GPL
 Group:		System/Printing
 URL:		http://www.tu-harburg.de/~soda0231/pegg/pegg.html
@@ -90,3 +90,56 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %dir %{_datadir}/cups/model/pegg
 %attr(0644,root,root) %{_datadir}/cups/model/pegg/*.ppd*
 %attr(0644,root,root) %{_mandir}/man1/pegg*.1*
+
+
+%changelog
+* Tue May 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.23-10mdv2011.0
++ Revision: 663445
+- mass rebuild
+
+* Tue Nov 30 2010 Oden Eriksson <oeriksson@mandriva.com> 0.23-9mdv2011.0
++ Revision: 603877
+- rebuild
+
+* Sun Mar 14 2010 Oden Eriksson <oeriksson@mandriva.com> 0.23-8mdv2010.1
++ Revision: 518849
+- rebuild
+
+* Sun Aug 09 2009 Oden Eriksson <oeriksson@mandriva.com> 0.23-7mdv2010.0
++ Revision: 413293
+- rebuild
+
+* Tue Dec 23 2008 Oden Eriksson <oeriksson@mandriva.com> 0.23-6mdv2009.1
++ Revision: 318080
+- use %%ldflags
+- lowercase ImageMagick
+
+* Mon Jun 16 2008 Thierry Vignaud <tv@mandriva.org> 0.23-5mdv2009.0
++ Revision: 220548
+- rebuild
+
+* Fri Jan 11 2008 Thierry Vignaud <tv@mandriva.org> 0.23-4mdv2008.1
++ Revision: 149155
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Aug 30 2007 Oden Eriksson <oeriksson@mandriva.com> 0.23-3mdv2008.0
++ Revision: 75334
+- fix deps (pixel)
+
+* Thu Aug 16 2007 Oden Eriksson <oeriksson@mandriva.com> 0.23-2mdv2008.0
++ Revision: 64155
+- use the new System/Printing RPM GROUP
+
+* Mon Aug 13 2007 Oden Eriksson <oeriksson@mandriva.com> 0.23-1mdv2008.0
++ Revision: 62650
+- forgot one build dep (libusb-devel)
+- Import cups-drivers-pegg
+
+
+
+* Mon Aug 13 2007 Oden Eriksson <oeriksson@mandriva.com> 0.23-1mdv2008.0
+- initial Mandriva package
