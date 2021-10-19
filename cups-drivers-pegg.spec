@@ -1,7 +1,7 @@
 Summary:	CUPS printer drivers for Casio USB label printers
 Name:		cups-drivers-pegg
 Version:	0.23
-Release:	24
+Release:	25
 License:	GPLv2
 Group:		System/Printing
 URL:		http://www.tu-harburg.de/~soda0231/pegg/pegg.html
@@ -33,9 +33,9 @@ This package contains CUPS drivers (PPD) for the following printers:
 find -name "*.1.gz" | xargs gunzip
 
 %build
-%make -C pegg-* CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{ldflags}"
+%make_build -C pegg-* CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{build_ldflags}"
 
-%make -C pegg_el-*/src CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{ldflags}"
+%make_build -C pegg_el-*/src CFLAGS="%{optflags}" LIB_PATH="%{_libdir}" LDFLAGS="%{build_ldflags}"
 
 # Suppress logging in cups2pegg backend
 sed -i -e "s:/var/log/cups/cups2pegg.log:/dev/null:" cups2pegg*/src/cups2pegg
@@ -78,5 +78,4 @@ cp cups2pegg-*/*.png cups2pegg-*/*.html installed_docs/cups2pegg/
 %{_prefix}/lib/cups/backend/cups2pegg
 %dir %{_datadir}/cups/model/pegg
 %{_datadir}/cups/model/pegg/*.ppd*
-%{_mandir}/man1/pegg*.1*
-
+%doc %{_mandir}/man1/pegg*.1*
