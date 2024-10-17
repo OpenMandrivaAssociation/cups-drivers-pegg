@@ -4,7 +4,7 @@ Version:	0.23
 Release:	27
 License:	GPLv2
 Group:		System/Printing
-URL:		http://www.tu-harburg.de/~soda0231/pegg/pegg.html
+URL:		https://www.tu-harburg.de/~soda0231/pegg/pegg.html
 # the http://www.tu-harburg.de/~soda0231/pegg/files/ resource is gone
 Source0:	pegg-0.23.tar.bz2
 Source1:	xbm2crw-0.4.tar.bz2
